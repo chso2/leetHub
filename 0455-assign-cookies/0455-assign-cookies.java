@@ -7,11 +7,10 @@ class Solution {
         int cookieIndex = 0;
         int childIndex = 0;
         
-        while(childIndex < g.length && cookieIndex < s.length){
-            if(s[cookieIndex] >= g[childIndex]){
+        for (int i = 0; i < s.length && childIndex < g.length; i++) {
+            if (s[i] >= g[childIndex]) {
                 childIndex++;
             }
-            cookieIndex++;
         }
         return childIndex;
     }
