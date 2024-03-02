@@ -1,9 +1,14 @@
 class Solution {
     public int numMatchingSubseq(String s, String[] words) {
         int result = 0;
-        for (String word : words) {
+        HashMap<String, Integer> map = new HashMap<>();
+        for(String str : words){
+            map.put(str, map.getOrDefault(str, 0) + 1);
+        }
+        
+        for (String word : map.keySet()) {
             if (isSubsequence(word, s)) {
-                result++;
+                result += map.get(word);
             }
         }
         return result;
