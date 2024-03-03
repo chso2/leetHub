@@ -13,12 +13,9 @@ class Solution {
         int rightCount = 0;
         
         while(leftCount < words.length || rightCount < words.length){
-            if(words[leftIndex].equals(target)) {
-                return leftCount;
-            }
-            if(words[rightIndex].equals(target)) {
-                return rightCount;
-            }
+            if(words[leftIndex].equals(target))return leftCount;
+            if(words[rightIndex].equals(target))return rightCount;
+            
             leftIndex = leftIndex > 0 ? leftIndex - 1 : words.length - 1;
             rightIndex = rightIndex < words.length - 1 ? rightIndex + 1 : 0;            
             
