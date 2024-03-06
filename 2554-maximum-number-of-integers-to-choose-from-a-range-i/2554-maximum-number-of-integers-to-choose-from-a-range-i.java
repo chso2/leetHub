@@ -15,9 +15,7 @@ class Solution {
         Arrays.sort(banned);
         banned = Arrays.stream(banned).distinct().toArray();
         for(int i = 1; i <= n; i++){
-            
             if(banCount <= banned.length - 1){
-                
                 if(banned[banCount] != i){
                     if(sum + i <= maxSum){
                         sum += i;
